@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
 
 class CustomList extends Component {
 

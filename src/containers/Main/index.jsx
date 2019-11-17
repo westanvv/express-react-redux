@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 import List from '../../components/List';
 
@@ -12,7 +13,7 @@ import * as appActions from '../../actions/app'
 
 class Main extends Component {
 
-  handleOnClick = (e) => {
+  handleOnClick = () => {
     this.props.appActions.getData();
   };
 
@@ -21,9 +22,15 @@ class Main extends Component {
 
     return (
       <div id="main-layout">
-        <AppBar title="Title" />
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6">
+              Title
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <div id="page-wrapper" className="page-wrapper">
-          <RaisedButton label="Default" onClick={this.handleOnClick}/>
+          <Button onClick={this.handleOnClick}>Button</Button>
           <List data={this.props.appReducer.data}/>
         </div>
       </div>
